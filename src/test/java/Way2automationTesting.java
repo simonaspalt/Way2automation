@@ -364,13 +364,19 @@ public class Way2automationTesting {
         Assert.assertNotNull(_globalDriver.findElement(By.xpath("/html/body/div/h3[3]/span")));
         Assert.assertNotNull(_globalDriver.findElement(By.xpath("/html/body/div/h3[4]/span")));
         //click toggle
-
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         _globalDriver.findElement(By.xpath("/html/body/button")).click();
         try {
             TimeUnit.SECONDS.sleep(3);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        //how to assert wether icon disapeared?
+        //ui-accordion-icons
         Assert.assertNull(_globalDriver.findElement(By.xpath("/html/body/div/h3[1]/span")));
         Assert.assertNull(_globalDriver.findElement(By.xpath("/html/body/div/h3[2]/span")));
         Assert.assertNull(_globalDriver.findElement(By.xpath("/html/body/div/h3[3]/span")));
